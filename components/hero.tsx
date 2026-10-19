@@ -56,7 +56,7 @@ export const Hero = () => (
   >
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(196,165,116,0.16),transparent_52%)]"
+      className="hero-glow pointer-events-none absolute inset-0"
     />
     <div className="relative z-10 max-w-3xl lg:max-w-[42vw]">
       <p className="hero-rise text-xs tracking-[0.28em] uppercase text-brass">

@@ -38,8 +38,16 @@ body {
 }
 
 ::selection {
-  background: #c4a574;
-  color: #0c0b0a;
+  background: var(--brass);
+  color: var(--ink);
+}
+
+.hero-glow {
+  background: radial-gradient(
+    ellipse at top left,
+    color-mix(in srgb, var(--brass) 16%, transparent),
+    transparent 52%
+  );
 }
 
 @keyframes rise {
@@ -130,7 +138,7 @@ body {
   height: 100dvh;
   max-width: 100vw;
   max-height: 100dvh;
-  background: rgba(12, 11, 10, 0.94);
+  background: color-mix(in srgb, var(--background) 94%, transparent);
   color: inherit;
   overflow: hidden;
   opacity: 0;
@@ -148,7 +156,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(12, 11, 10, 0.94);
+  background: color-mix(in srgb, var(--background) 94%, transparent);
   opacity: 1;
   transform: translateY(0);
 }
@@ -161,7 +169,7 @@ body {
 }
 
 #artwork-dialog::backdrop {
-  background: rgba(12, 11, 10, 0.88);
+  background: color-mix(in srgb, var(--background) 88%, transparent);
 }
 
 html:has(#artwork-dialog[open]) {

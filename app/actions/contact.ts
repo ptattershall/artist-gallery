@@ -32,6 +32,15 @@ const getSmtpConfig = () => {
   return { host, user, pass, from, to, port };
 };
 
+const formatFrom = (from: string) => {
+  if (from.includes("<")) {
+    return from;
+  }
+
+  const safeName = site.artistName.replace(/[\r\n"]/g, "").trim() || "Studio";
+  return `"${safeName}" <${from}>`;
+};
+
 const isHoneypotTripped = (input: unknown) => {
   if (!input || typeof input !== "object" || !("company" in input)) {
     return false;
@@ -104,7 +113,7 @@ export const sendContact = async (input: unknown): Promise<ContactResult> => {
     });
 
     await transporter.sendMail({
-      from: smtp.from,
+      from: formatFrom(smtp.from),
       to: smtp.to,
       replyTo: email,
       subject: `Gallery inquiry from ${safeName}`,

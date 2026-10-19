@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Instrument_Serif } from "next/font/google";
-import { site } from "@/lib/site";
+import { site, siteThemeStyle } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -25,6 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${geistSans.variable} ${instrumentSerif.variable} h-full antialiased`}
+      style={siteThemeStyle}
     >
       <body className="min-h-full bg-background font-sans text-foreground">
         {children}

@@ -2,6 +2,7 @@ import { ContactSection } from "@/components/contact-form";
 import { Gallery } from "@/components/gallery";
 import { Hero } from "@/components/hero";
 import { SiteHeader } from "@/components/site-header";
+import { SocialLinks } from "@/components/social-links";
 import { site } from "@/lib/site";
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
           >
             {site.email}
           </a>
+          <SocialLinks className="flex flex-wrap gap-x-5 gap-y-2" />
         </div>
       </footer>
     </>

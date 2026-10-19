@@ -5,6 +5,7 @@ import { useState, type ReactNode } from "react";
 import { useForm } from "react-hook-form";
 import { sendContact } from "@/app/actions/contact";
 import { Reveal } from "@/components/reveal";
+import { SocialLinks } from "@/components/social-links";
 import {
   contactSchema,
   type ContactInput,
@@ -118,6 +119,7 @@ export const ContactSection = () => {
           <p className="mt-3 text-sm tracking-[0.14em] text-muted uppercase">
             {site.location}
           </p>
+          <SocialLinks className="mt-8 flex flex-col items-start gap-3" />
         </Reveal>
         <Reveal delay={1}>
           <form aria-labelledby="contact-title" onSubmit={onSubmit} noValidate className="relative">
